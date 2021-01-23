@@ -1,5 +1,4 @@
 require 'slack-ruby-bot'
-require 'slack-ruby-client'
 require 'net/http'
 require 'uri'
 require 'json'
@@ -10,7 +9,7 @@ class Question_Ruby < SlackRubyBot::Bot
 			uri = URI.parse("https://slack.com/api/conversations.list")
 			request = Net::HTTP::Get.new(uri)
 			request.content_type = 'application/x-www-form-urlencoded'
-			request['Authorization'] = 'Bearer xoxb-1660781919332-1648885155222-t2Zk7hAmxmOErmSCPeWaah3n'
+			request['Authorization'] = 'Bearer xoxb-1660781919332-1667338882609-xGEqkPOVy8ay7Vt4V4qDW3zG'
 			req_options = {
 				use_ssl: uri.scheme == 'https',
 			}
@@ -39,7 +38,7 @@ class Question_Ruby < SlackRubyBot::Bot
 			uri = URI.parse("https://slack.com/api/conversations.list")
 			request = Net::HTTP::Get.new(uri)
 			request.content_type = 'application/x-www-form-urlencoded'
-			request['Authorization'] = 'Bearer xoxb-1660781919332-1648885155222-t2Zk7hAmxmOErmSCPeWaah3n'
+			request['Authorization'] = 'Bearer xoxb-1660781919332-1667338882609-xGEqkPOVy8ay7Vt4V4qDW3zG'
 			req_options = {
 				use_ssl: uri.scheme == 'https',
 			}
@@ -68,7 +67,7 @@ class Question_Ruby < SlackRubyBot::Bot
 			uri = URI.parse("https://slack.com/api/conversations.list")
 			request = Net::HTTP::Get.new(uri)
 			request.content_type = 'application/x-www-form-urlencoded'
-			request['Authorization'] = 'Bearer xoxb-1660781919332-1648885155222-t2Zk7hAmxmOErmSCPeWaah3n'
+			request['Authorization'] = 'Bearer xoxb-1660781919332-1667338882609-xGEqkPOVy8ay7Vt4V4qDW3zG'
 			req_options = {
 				use_ssl: uri.scheme == 'https',
 			}
