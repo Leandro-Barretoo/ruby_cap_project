@@ -27,14 +27,12 @@ that you can join [here](https://join.slack.com/t/testingpurposesspace/shared_in
 - Clone the repo `git clone git@github.com:Leandro-Barretoo/ruby_cap_project.git`
 - `cd` into the directory
 - Run `git checkout -b feature/initial_proj`
-- Run `git pull origin feature/initial_proj`
 - Run `bundle install`
 - Make sure you get your `.env` files configured. The app will not work
   without it.
 ```json
-SLACK_API_TOKEN=bot-token
+SLACK_API_TOKEN= token is in the pull request description
 ```
-Get a bot integration and respective token key [here](https://testingpurposesspace.slack.com/apps/new/A0F7YS25R-bots)
 
 After cloning the repo and setting up:
 Run the bot using the step:
