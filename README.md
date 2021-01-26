@@ -3,7 +3,7 @@
 > This bot is used on the Slack platform to make questions and their respective answer more efficient.
 
 ## Video link
-[Loom video]()
+[Loom video](https://www.loom.com/share/aaa2207606d44ef5b6bb023ac9d26429)
 
 ## Description
 This project was done for the `ruby` capstone
