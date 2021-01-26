@@ -9,13 +9,13 @@ require_relative '../lib/commands/reply_question.rb'
 Dotenv.load
 
 Slack.configure do |config|
-	config.token = ENV['SLACK_API_TOKEN']
-	raise 'Missing ENV[SLACK_API_TOKEN]!' unless config.token
+  config.token = ENV['SLACK_API_TOKEN']
+  raise 'Missing ENV[SLACK_API_TOKEN]!' unless config.token
 end
 
 class MainBot < SlackRubyBot::Bot
-	ruby_quest = QuestionRuby.new
-	ruby_reply = Reply.new
+  QuestionRuby.new
+  Reply.new
 end
 
 MainBot.run

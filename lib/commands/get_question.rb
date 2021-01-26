@@ -1,5 +1,5 @@
 class QuestionRuby < SlackRubyBot::Bot
-  command 'get-ruby' do |channel, data, _match|
+  command 'get-ruby' do
     client = Slack::Web::Client.new
 
     uri = URI('https://slack.com/api/conversations.history')
@@ -16,9 +16,9 @@ class QuestionRuby < SlackRubyBot::Bot
     client.chat_postMessage(channel: '#answers', text: a, as_user: true)
   end
 
-  command 'get-html' do |channel, data, _match|
+  command 'get-html' do
     client = Slack::Web::Client.new
-    
+
     uri = URI('https://slack.com/api/conversations.history')
     params = {
       token: ENV['SLACK_API_TOKEN'],
@@ -33,7 +33,7 @@ class QuestionRuby < SlackRubyBot::Bot
     client.chat_postMessage(channel: '#answers', text: a, as_user: true)
   end
 
-  command 'get-javascript' do |_channel, _data, _match|
+  command 'get-javascript' do
     client = Slack::Web::Client.new
 
     uri = URI('https://slack.com/api/conversations.history')
