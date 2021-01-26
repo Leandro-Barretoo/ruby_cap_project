@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 require 'slack-ruby-bot'
 require 'net/http'
 require 'uri'
@@ -15,7 +14,7 @@ Slack.configure do |config|
 end
 
 class MainBot < SlackRubyBot::Bot
-	ruby_quest = Question_Ruby.new
+	ruby_quest = QuestionRuby.new
 	ruby_reply = Reply.new
 end
 
