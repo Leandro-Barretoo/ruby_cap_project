@@ -67,6 +67,7 @@ PLATFORMS
 DEPENDENCIES
   async-websocket (~> 0.8.0)
   dotenv
+  faraday
   httparty
   slack-ruby-bot
   slack-ruby-client

@@ -22,3 +22,38 @@ describe Reply do
     expect(reply.is_a?(SlackRubyBot::Bot)).to eql(true)
   end
 end
+
+describe Reply do
+  let(:check) { Reply.new }
+  describe '#check' do
+    it 'checks API calling code' do
+      expect(check.check(ENV['SLACK_API_TOKEN']).is_a?(Hash)).to eql(true)
+    end
+    it 'throws an error if invalid token is given' do
+      expect(check.check('someting')).to eql('Invalid token')
+    end
+  end
+  describe '#authorization' do
+    it 'checks API calling code' do
+      expect(check.authorization("#{ENV['SLACK_API_TOKEN']}")['ok']).to eql(true)
+    end
+  end
+end
+
+describe QuestionRuby do
+  let(:quest) { QuestionRuby.new }
+  describe '#get_history' do
+    it 'get the history of the conversations of the channel "#ruby"' do
+      expect(quest.get_history('C01L01MN4C9', ENV['SLACK_API_TOKEN']).is_a?(String)).to eql(true)
+    end
+    it 'get the history of the conversations of the channel "#html-css"' do
+      expect(quest.get_history('C01KMJQ6M3M', ENV['SLACK_API_TOKEN']).is_a?(String)).to eql(true)
+    end
+    it 'get the history of the conversations of the channel "#javascript"' do
+      expect(quest.get_history('C01KEKALT3Q', ENV['SLACK_API_TOKEN']).is_a?(String)).to eql(true)
+    end
+    it 'throws an error if there is no valid token' do
+      expect(quest.get_history('C01L01MN4C9', 'something')).to eql('Invalid token')
+    end
+  end
+end
