@@ -5,22 +5,19 @@ Dotenv.load('.env')
 
 class QuestionRuby < SlackRubyBot::Bot
   def get_history(chan, tok)
-    if tok == ENV['SLACK_API_TOKEN']
-      uri = URI('https://slack.com/api/conversations.history')
-      params = {
-        token: tok,
-        channel: chan,
-        limit: 1,
-        inclusive: true
-      }
-      uri.query = URI.encode_www_form(params)
-      res = Net::HTTP.get_response(uri)
-      res_one = JSON.parse(res.body)
-      a = res_one['messages'][0]['text']
-      return a
-    else
-      return 'Invalid token'
-    end
+    return 'Invalid token' unless tok == ENV['SLACK_API_TOKEN']
+
+    uri = URI('https://slack.com/api/conversations.history')
+    params = {
+      token: tok,
+      channel: chan,
+      limit: 1,
+      inclusive: true
+    }
+    uri.query = URI.encode_www_form(params)
+    res = Net::HTTP.get_response(uri)
+    res_one = JSON.parse(res.body)
+    res_one['messages'][0]['text']
   end
 
   def get_quest(channel, text)

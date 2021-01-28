@@ -35,7 +35,7 @@ describe Reply do
   end
   describe '#authorization' do
     it 'checks API calling code' do
-      expect(check.authorization("#{ENV['SLACK_API_TOKEN']}")['ok']).to eql(true)
+      expect(check.authorization(ENV['SLACK_API_TOKEN'].to_s)['ok']).to eql(true)
     end
   end
 end
