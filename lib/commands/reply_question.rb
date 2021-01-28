@@ -1,3 +1,7 @@
+require 'dotenv'
+
+Dotenv.load('.env')
+
 class Reply < SlackRubyBot::Bot
   command 'reply' do |_channel, data, _match|
     channel_name = data.text.split(' ', 4)[2]

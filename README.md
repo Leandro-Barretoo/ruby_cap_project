@@ -2,6 +2,8 @@
 
 > This bot is used on the Slack platform to make questions and their respective answer more efficient.
 
+![image](./slack_bot.png)
+
 ## Video link
 [Loom video]()
 

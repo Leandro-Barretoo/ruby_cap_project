@@ -3,10 +3,10 @@ require 'net/http'
 require 'uri'
 require 'json'
 require 'dotenv'
-require_relative '../lib/commands/get_question.rb'
-require_relative '../lib/commands/reply_question.rb'
+require_relative '../lib/commands/get_question'
+require_relative '../lib/commands/reply_question'
 
-Dotenv.load
+Dotenv.load('.env')
 
 Slack.configure do |config|
   config.token = ENV['SLACK_API_TOKEN']
