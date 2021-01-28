@@ -28,7 +28,6 @@ that you can join [here](https://join.slack.com/t/testingpurposesspace/shared_in
 ## Usage
 - Clone the repo `git clone git@github.com:Leandro-Barretoo/ruby_cap_project.git`
 - `cd` into the directory
-- Run `git checkout -b feature/initial_proj`
 - Run `bundle install`
 - Make sure you get your `.env` files configured. The app will not work
   without it.
