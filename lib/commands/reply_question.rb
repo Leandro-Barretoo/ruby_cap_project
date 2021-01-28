@@ -1,4 +1,5 @@
 require 'dotenv'
+require 'faraday'
 
 Dotenv.load('.env')
 
@@ -37,6 +38,7 @@ class Reply < SlackRubyBot::Bot
       return 'Invalid token'
     end
   end
+  
   command 'reply' do |_channel, data, _match|
     channel_name = data.text.split(' ', 4)[2]
     reply_text = data.text.split(' ', 4)[-1]

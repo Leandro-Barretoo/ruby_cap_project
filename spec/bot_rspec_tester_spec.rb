@@ -56,4 +56,12 @@ describe QuestionRuby do
       expect(quest.get_history('C01L01MN4C9', 'something')).to eql('Invalid token')
     end
   end
+  describe '#get_quest' do
+    it 'sends the retrived message to the main channel' do
+      expect(quest.get_quest('#answers', 'Hello').status).to eql(200)
+    end
+    it 'sends the retrived message to the main channel' do
+      expect(quest.get_quest('#answers', 'Hello').body.is_a?(String)).to eql(true)
+    end
+  end
 end
