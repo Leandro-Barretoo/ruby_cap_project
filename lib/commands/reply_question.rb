@@ -7,20 +7,21 @@ class Reply < SlackRubyBot::Bot
   def authorization(tok)
     if tok == ENV['SLACK_API_TOKEN']
       uri = URI.parse('https://slack.com/api/auth.test')
-        request = Net::HTTP::Post.new(uri)
-        request.content_type = 'application/json'
-        request['Authorization'] = "Bearer #{tok}"
-        req_options = {
-          use_ssl: uri.scheme == 'https'
-        }
-        response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
-          http.request(request)
-        end
-        works = JSON.parse(response.body)
-      else
-        return 'Invalid token'
+      request = Net::HTTP::Post.new(uri)
+      request.content_type = 'application/json'
+      request['Authorization'] = "Bearer #{tok}"
+      req_options = {
+        use_ssl: uri.scheme == 'https'
+      }
+      response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+        http.request(request)
+      end
+      JSON.parse(response.body)
+    else
+      'Invalid token'
     end
   end
+
   def check(tok)
     if tok == ENV['SLACK_API_TOKEN']
       uri = URI.parse('https://slack.com/api/api.test')
@@ -33,12 +34,12 @@ class Reply < SlackRubyBot::Bot
       response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
         http.request(request)
       end
-      works = JSON.parse(response.body)
+      JSON.parse(response.body)
     else
-      return 'Invalid token'
+      'Invalid token'
     end
   end
- 
+
   command 'reply' do |_channel, data, _match|
     channel_name = data.text.split(' ', 4)[2]
     reply_text = data.text.split(' ', 4)[-1]
